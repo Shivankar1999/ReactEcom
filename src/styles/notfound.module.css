@@ -1,0 +1,16 @@
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: red;
+  height: 800px;
+  width: 100vw;
+}
+div.notfound h1 {
+  font-size: 50px;
+  color: aqua;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  text-shadow: 1px 3px 1px rgb(238, 56, 10);
+}

@@ -1,0 +1,84 @@
+.mycartitembox {
+  /* border: 2px solid red; */
+  margin-top: 35px;
+  width: 90vw;
+  margin: 75px auto 5px;
+  height: auto;
+  /* max-height: 70vh; */
+}
+
+.mycartitems {
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+  padding: 5px;
+}
+.mycartitems .cartitem {
+  padding: 5px;
+  box-shadow: 2px 1px 3px 1px #000;
+  width: 100%;
+  height: 150px;
+  /* border: 2px solid green; */
+  margin: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mycartitems .cartitem .cartimg {
+  width: 40%;
+  height: 100%;
+  /* border: 2px solid olive; */
+  object-fit: cover;
+  object-position: center;
+}
+.mycartitems .cartitem .cartimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+.mycartitems .cartitem button {
+  padding: 5px 19px;
+  color: rgb(87, 9, 9);
+  font-size: 19px;
+  border: 1px solid rgb(221, 26, 12);
+  box-shadow: 3px 1px 2px lightblue;
+  font-size: 600;
+  /* text-shadow: 2px 0px 1px rgb(1, 8, 14); */
+  background-color: #fff;
+  margin-right: 5px;
+  border-radius: 5px;
+  transform: scale(1);
+}
+
+.mycartitems .cartitem button:hover {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-shadow: none;
+  transform: scale(0.98);
+  /* border: 1px solid rgb(221, 26, 12); */
+  /* font-weight: 600; */
+  text-shadow: 2px 0px 1px rgb(1, 8, 14);
+}
+
+@media (max-width: 600px) {
+  .mycartitems .cartitem {
+    padding: 5px;
+    box-shadow: 2px 1px 3px 1px #000;
+    width: 100%;
+    height: 350px;
+    /* border: 2px solid green; */
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mycartitems .cartitem .cartimg {
+    height: 50%;
+  }
+}

@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "EB Garamond", serif;
+}
+body {
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.navcontainer a:hover {
+  transition: all 0.5s;
+  letter-spacing: 1.5px;
+  text-shadow: 3px 0px 2px rgb(0, 0, 0);
+}
+.navcontainer {
+  width: 100vw;
+  margin: 0 auto;
+  background-color: rgba(5, 2, 32, 0.993);
+  height: 66px;
+  position: fixed;
+  z-index: 5;
+  opacity: 0.91;
+  /* position: sticky; */
+  top: 0;
+  left: 0;
+  box-shadow: 0px 0px 3px 4px rgba(0, 0, 0, 0.459);
+}
+
+.navItems {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+
+  color: #fff;
+  padding: 0px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  /* font-style: italic; */
+  font-size: 19px;
+  /* border: 2px solid rgb(38, 172, 45); */
+}
+
+.navItems .logo {
+  /* border: 2px solid white; */
+  width: 450px;
+  max-width: 90%;
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+svg {
+  color: #fff;
+  margin-left: 5px;
+}
+.navItems .logo span {
+  font-size: 28px;
+  font-weight: 800;
+}
+.navItems .logo span i {
+  color: #fff;
+}
+.navItems .logo .navlinkBox {
+  width: 70%;
+  height: 100%;
+  max-width: 300px;
+}
+.navItems .logo .navlinkBox ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  align-items: center;
+  text-align: center;
+}
+.userData {
+  margin-right: 15px;
+}
+.userData span.cartcount {
+  color: rgb(255, 255, 255);
+  position: fixed;
+  /* right: 1.3%; */
+  top: 0.2%;
+  color: rgb(16, 214, 214);
+  font-size: 29px;
+  font-weight: 500;
+  text-shadow: 2px 0px 2px #000;
+  left: 97.98%;
+  /* display: none; */
+}
+.userData svg {
+  /* font-size: 25px; */
+  width: 50px;
+  height: 25px;
+}
+
+@media (max-width: 500px) {
+  .navItems {
+    /* display: flex;
+    
+    justify-content: center;
+    text-align: center; */
+    display: flex;
+  }
+  .navItems .logo a.LogoB {
+    /* border: 2px solid white; */
+    display: none;
+  }
+  .userData {
+    /* display: none; */
+  }
+}
