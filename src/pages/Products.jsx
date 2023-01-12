@@ -54,7 +54,7 @@ const Products = () => {
                       getProduct(product.id);
                     }}
                   >
-                    Know More
+                    Explore More
                   </Link>
                 </div>
               </div>
