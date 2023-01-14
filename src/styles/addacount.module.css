@@ -16,13 +16,25 @@
   justify-content: flex-start;
   align-items: center;
 }
-.formbox h4 {
+.formbox span {
   font-size: 25px;
   margin-bottom: 20px;
   margin-top: 30px;
   text-align: center;
   margin-right: 55px;
   text-transform: uppercase;
+}
+.formbox span a {
+  color: lightblue;
+  text-shadow: 1px 1px 2px #000;
+  cursor: pointer;
+}
+.formbox span a.active {
+  color: rgb(209, 143, 19);
+}
+.formbox span a:hover {
+  /* border-bottom: 1px solid lightgreen; */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.63);
 }
 .formbox .AccLog {
   /* flex-grow: 5; */
@@ -127,9 +139,18 @@
 }
 
 @media (max-width: 670px) {
+  .formbox .AccLog .logIn {
+    width: 100%;
+    height: auto;
+  }
+
   .formbox .AccLog .SignIn div input {
     width: 90%;
     font-size: 15px;
+  }
+  .formbox .AccLog .SignIn {
+    width: 90%;
+    height: auto;
   }
   .formbox .AccLog .SignIn button {
     width: auto;

@@ -6,12 +6,13 @@ export const GlobalData = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState([]);
   const [CartCount, setCartCount] = useState("0");
-  const [Persist, setPersist] = useState([]);
+  const [loader, setloader] = useState(true);
 
   useEffect(() => {
     const getAllD = async () => {
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
+      setloader(false);
       setProducts(data);
     };
     getAllD();
@@ -31,8 +32,8 @@ export const GlobalData = ({ children }) => {
         setProduct,
         CartCount,
         setCartCount,
-        Persist,
-        setPersist,
+        loader,
+        setloader,
       }}
     >
       {children}
