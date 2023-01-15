@@ -14,7 +14,7 @@ const ProductDetail = () => {
           <h3>{product[0].category}</h3>
           <p>{product[0].title}</p>
           <p>{product[0].description}</p>
-          <p>{product[0].price}Rs.</p>
+          <p>{product[0].price}&#8377;.</p>
           <p>Rating : {product[0].rating.rate}</p>
           <button>Add To Cart </button>
         </div>

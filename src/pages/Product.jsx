@@ -33,7 +33,7 @@ const Product = () => {
                 {product.category}
               </h3>
               <p>{product.title}</p>
-              <span>Rate : {product.price}Rs.</span>
+              <span>Rate : {product.price}&#8377;.</span>
               <div className={styles.btnBox}>
                 <Link
                   onClick={() => {

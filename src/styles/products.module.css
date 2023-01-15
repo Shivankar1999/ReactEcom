@@ -6,14 +6,39 @@
   margin: 60px auto;
   height: 85vh;
   max-height: 100%;
-
+  display: flex;
+  flex-direction: column;
   height: auto;
 }
+.products_container .sortbtn {
+  align-self: flex-end;
+  position: fixed;
+  margin: 15px 35px;
+  /* opacity: 0.5; */
 
+  z-index: 5;
+  /* color: rgb(0, 0, 0); */
+  /* background-color: #fff; */
+  overflow: hidden;
+}
+.products_container .sortbtn > button {
+  padding: 5px 25px;
+  display: block;
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 10;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  border: 3px solid rgb(117, 3, 117);
+  box-shadow: 3px 1px 2px rgb(2, 2, 2);
+  font-size: 19px;
+
+  color: rgb(5, 149, 197);
+}
 .landingSec {
   width: 95%;
   padding: 8px;
-  margin: 5px auto;
+  margin: 45px auto;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
