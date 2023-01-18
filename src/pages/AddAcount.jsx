@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/addacount.module.css";
 import { Link, Router, Route } from "react-router-dom";
-import { Login, Signin } from "./index";
+import { Login, Signup } from "./index";
 const AddAcount = () => {
   const [formC, setformC] = useState(false);
   const [active, setActive] = useState("");
@@ -19,7 +19,7 @@ const AddAcount = () => {
           </a>
         </span>
 
-        <div className={styles.AccLog}>{formC ? <Signin /> : <Login />}</div>
+        <div className={styles.AccLog}>{formC ? <Signup /> : <Login />}</div>
       </div>
     </div>
   );
