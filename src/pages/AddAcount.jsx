@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/addacount.module.css";
-import { Link, Router, Route } from "react-router-dom";
+
 import { Login, Signup } from "./index";
 const AddAcount = () => {
   const [formC, setformC] = useState(false);
@@ -9,7 +9,6 @@ const AddAcount = () => {
     <div className={styles.formheadbox}>
       <div className={styles.formbox}>
         <span>
-          {" "}
           <a className={active} onClick={() => setformC(true)}>
             Create Account
           </a>

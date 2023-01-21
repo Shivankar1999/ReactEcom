@@ -1,23 +1,10 @@
-import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
-import { app } from "../firebasesetup/firebase";
-
 import React, { useState } from "react";
 import styles from "../styles/addacount.module.css";
-const auth = getAuth(app);
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const LoginUserCheck = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((val) => alert("User Login Succesfully"))
-      .catch((err) => {
-        alert("Plaese Check data you enter");
-        console.log(err);
-      });
-    setEmail("");
-    setPassword("");
-  };
   return (
     <div className={styles.logIn}>
       <div>
@@ -38,7 +25,7 @@ const Login = () => {
           placeholder="Enter Password..."
         />
       </div>
-      <button onClick={LoginUserCheck}>Log In</button>
+      <button>Log In</button>
     </div>
   );
 };
