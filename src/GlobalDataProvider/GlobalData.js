@@ -1,8 +1,32 @@
 import { createContext, useEffect, useState } from "react";
 
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDW9Vqiu0JMoHEe7Xs0HDa9X3KN7hxUjWQ",
+  authDomain: "urecomapp.firebaseapp.com",
+  projectId: "urecomapp",
+  storageBucket: "urecomapp.appspot.com",
+  messagingSenderId: "326557543596",
+  appId: "1:326557543596:web:743f8f579c135b4171c309",
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const firebaseAuth = getAuth(firebaseApp);
+
 export const GlobalContant = createContext(null);
 
 export const GlobalData = ({ children }) => {
+  const [username, setUserName] = useState("");
+  const [user, setuser] = useState(null);
+  const [showProfile, setshowProfile] = useState(false);
   const [products, setProducts] = useState([]);
 
   const [product, setProduct] = useState([]);
@@ -10,6 +34,24 @@ export const GlobalData = ({ children }) => {
   const [loader, setloader] = useState(true);
   const [normalizePeoducts, setnormalizePeoducts] = useState(true);
 
+  useEffect(() => {
+    onAuthStateChanged(firebaseAuth, (user) => {
+      if (user) {
+        setuser(user);
+      } else {
+        setuser(null);
+      }
+    });
+  }, []);
+
+  // Firebase Functions
+  const CreateUserWemailPass = (email, password) =>
+    createUserWithEmailAndPassword(firebaseAuth, email, password);
+  const SignInUserWemailPass = (email, password) =>
+    signInWithEmailAndPassword(firebaseAuth, email, password);
+  const isLogedIn = user ? "true" : "false";
+
+  // App Functions
   const sortbyprice = () => {
     let sortlist = products.sort((a, b) => a.price - b.price);
     console.log(sortlist, "by price");
@@ -36,7 +78,7 @@ export const GlobalData = ({ children }) => {
     getAllD();
     if (localStorage.getItem("cartItem")) {
       let getCartCount = JSON.parse(localStorage.getItem("cartItem")).length;
-      console.log(getCartCount);
+      // console.log(getCartCount);
       setCartCount(getCartCount);
     }
   }, []);
@@ -57,6 +99,16 @@ export const GlobalData = ({ children }) => {
         setnormalizePeoducts,
 
         sortbynormal,
+
+        CreateUserWemailPass,
+        SignInUserWemailPass,
+        isLogedIn,
+        setUserName,
+        username,
+        signOut,
+        firebaseAuth,
+        setshowProfile,
+        showProfile,
       }}
     >
       {children}

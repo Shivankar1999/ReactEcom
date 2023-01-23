@@ -24,9 +24,9 @@ const Mycartitem = () => {
   return (
     <div className={styles.mycartitembox}>
       <div className={styles.mycartitems}>
-        {items.map((I) => {
+        {items.map((I, i) => {
           return (
-            <div className={styles.cartitem}>
+            <div className={styles.cartitem} key={i}>
               <div className={styles.cartimg}>
                 <img src={I.image} />
               </div>

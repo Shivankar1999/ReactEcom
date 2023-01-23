@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { GlobalContant } from "../GlobalDataProvider/GlobalData.js";
 import styles from "../styles/navbar.module.css";
 import { Link } from "react-router-dom";
-
+import { UserProfile } from "../pages";
+// import {UserProfile}  from '../p'
 export const Navbar = () => {
-  let { CartCount } = useContext(GlobalContant);
+  let { CartCount, username, signOut, firebaseAuth, showProfile } =
+    useContext(GlobalContant);
 
   return (
     <div className={styles.navcontainer}>
@@ -47,7 +49,15 @@ export const Navbar = () => {
         </div>
 
         <div className={styles.userData}>
-          <Link to={"/addacount"}>Add Account</Link>
+          {showProfile == true ? (
+            <UserProfile
+              username={username}
+              logOut={signOut}
+              firebaseAuth={firebaseAuth}
+            />
+          ) : (
+            <Link to={"/addacount"}>Add Account</Link>
+          )}{" "}
           <Link to={"/mycartitem"}>
             <span className={styles.cartcount}>{CartCount}</span>
             <svg

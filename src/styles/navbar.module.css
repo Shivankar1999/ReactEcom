@@ -84,7 +84,7 @@ svg {
 }
 .userData {
   display: flex;
-  width: 250px;
+  width: 350px;
   align-items: center;
   justify-content: space-around;
   margin-right: 25px;
@@ -110,20 +110,28 @@ svg {
   width: 50px;
   height: 25px;
 }
-
+@media (max-width: 735px) {
+  .navItems .logo a.LogoB {
+    /* border: 2px solid white; */
+    display: none;
+  }
+  .navItems div.navlinkBox ul li a svg {
+    display: none;
+  }
+  .userData {
+    /* display: flex; */
+    width: 300px;
+  }
+}
 @media (max-width: 500px) {
   .navItems {
     font-size: 16px;
     margin-left: -15px;
   }
 
-  .navItems .logo a.LogoB {
-    /* border: 2px solid white; */
-    display: none;
-  }
   .userData {
     /* display: none; */
-    width: 500px;
+    width: 250px;
     height: auto;
     margin-right: 0px;
     /* border: 3px solid red; */
