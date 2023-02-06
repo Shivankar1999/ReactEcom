@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, memo } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/products.module.css";
 import { GlobalContant } from "../GlobalDataProvider/GlobalData.js";
-const Product = () => {
-  let { products, setProduct, setCartCount } = useContext(GlobalContant);
+
+const Product = ({ products }) => {
+  let { setProduct, setCartCount } = useContext(GlobalContant);
   let ItemC = [];
   const getProduct = (id) => {
     let resD = products.filter((item) => item.id == id);
@@ -59,4 +60,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default React.memo(Product);

@@ -22,6 +22,7 @@ const Signup = () => {
     setUserName(name);
     setEmail("");
     setPassword("");
+    setName("");
     alert(`User ${username} account is created..`);
     // console.log("User Account is Created", result);
   };

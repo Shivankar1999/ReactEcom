@@ -6,13 +6,8 @@ import Product from "./Product.jsx";
 import Loader from "../components/Loader";
 
 const Products = () => {
-  let {
-    loader,
-
-    sortbynormal,
-    sortbyprice,
-    normalizePeoducts,
-  } = useContext(GlobalContant);
+  let { loader, products, sortbynormal, sortbyprice, normalizePeoducts } =
+    useContext(GlobalContant);
 
   return (
     <div className={styles.products_container}>
@@ -23,7 +18,7 @@ const Products = () => {
           <button onClick={() => sortbynormal()}>MaxUp&#8377;</button>
         )}
       </div>
-      {loader ? <Loader /> : <Product />}
+      {loader ? <Loader /> : <Product products={products} />}
     </div>
   );
 };
