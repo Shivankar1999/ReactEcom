@@ -2,12 +2,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import {
+  News,
   Mycartitem,
   PageNotFound,
   ProductDetail,
   Products,
   AddAcount,
-  News,
 } from "../pages";
 import { GlobalData } from "../GlobalDataProvider/GlobalData";
 import Fotter from "./Fotter";
