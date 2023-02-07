@@ -7,6 +7,7 @@ import {
   ProductDetail,
   Products,
   AddAcount,
+  News,
 } from "../pages";
 import { GlobalData } from "../GlobalDataProvider/GlobalData";
 import Fotter from "./Fotter";
@@ -19,6 +20,7 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Products />} />
+          <Route path="/news" element={<News />} />
           <Route path="/addacount" element={<AddAcount />} />
           <Route path="/mycartitem" element={<Mycartitem />} />
           <Route path={`/productdetail`} element={<ProductDetail />} />

@@ -44,9 +44,12 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 400;
+  font-weight: 200;
+  text-transform: uppercase;
   /* font-style: italic; */
-  font-size: 19px;
+  font-size: 16px;
+  text-shadow: 1px 1px 3px #fff;
+  letter-spacing: 2px;
   /* border: 2px solid rgb(38, 172, 45); */
 }
 
@@ -71,16 +74,19 @@ svg {
   color: #fff;
 }
 .navItems .logo .navlinkBox {
-  width: 70%;
+  width: 80%;
   height: 100%;
   max-width: 300px;
 }
 .navItems .logo .navlinkBox ul {
   display: flex;
   justify-content: space-around;
-  padding: 8px;
+  padding: 5px;
   align-items: center;
   text-align: center;
+}
+.navItems .logo .navlinkBox ul li {
+  margin-right: 10px;
 }
 .userData {
   display: flex;
@@ -110,14 +116,21 @@ svg {
   width: 50px;
   height: 25px;
 }
-@media (max-width: 735px) {
+@media (max-width: 805px) {
+  .navItems .logo .navlinkBox {
+    width: 90%;
+    /* max-width: 60%; */
+    /* border: 2px solid white; */
+  }
+  .navItems .logo svg {
+    display: none;
+  }
+
   .navItems .logo a.LogoB {
     /* border: 2px solid white; */
     display: none;
   }
-  .navItems div.navlinkBox ul li a svg {
-    display: none;
-  }
+
   .userData {
     /* display: flex; */
     width: 300px;
@@ -125,8 +138,8 @@ svg {
 }
 @media (max-width: 500px) {
   .navItems {
-    font-size: 16px;
-    margin-left: -15px;
+    font-size: 12px;
+    /* margin-left: px; */
   }
 
   .userData {

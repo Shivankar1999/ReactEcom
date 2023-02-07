@@ -28,6 +28,7 @@ export const GlobalData = ({ children }) => {
   const [user, setuser] = useState(null);
   const [showProfile, setshowProfile] = useState(false);
   const [products, setProducts] = useState([]);
+  const [news, setnews] = useState(null);
 
   const [product, setProduct] = useState([]);
   const [CartCount, setCartCount] = useState("0");
@@ -70,8 +71,14 @@ export const GlobalData = ({ children }) => {
     const getAllD = async () => {
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
+      const resnews = await fetch(
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=27ac1fe501ae436c9776558fb582afc3"
+      );
+      const newsres = await resnews.json();
+
       setloader(false);
       setnormalizePeoducts(true);
+      setnews(newsres.articles);
 
       setProducts(data);
     };
@@ -109,6 +116,7 @@ export const GlobalData = ({ children }) => {
         firebaseAuth,
         setshowProfile,
         showProfile,
+        news,
       }}
     >
       {children}
